@@ -1,1 +1,519 @@
-/* You CSS goes in here */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #FFFFFF;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+section{
+    padding: 100px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+.signals, .product, .fourier, .haar, .cancel, footer{
+  font-family: 'Poppins', sans-serif;
+}
+
+.signals .signals-content,
+.product .product-content,
+.fourier .fourier-content,
+.haar .haar-content,
+.cancel .cancel-content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+} /* change orientations here */
+
+section .title{
+  position: relative;
+  text-align: center;
+  color: #FFFFFF;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 60px;
+  padding-bottom: 20px;
+  font-family: 'Ubuntu', sans-serif;
+}
+.navbar{
+    position: fixed;
+    background: #176696;
+    width: 100%;
+    z-index: 999;
+    padding: 0 0;
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}/* Navbar */
+
+.navbar.sticky{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 0 0;
+    background: #98CB3B;
+}/* Moved Navbar */
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo
+{
+  position: relative;
+  left: 0%;
+}
+.navbar .logo a{
+    color: #98CB3B;
+    font-size: 35px;
+    font-weight: 600;
+}/* Perso Portfo */
+.navbar .logo a span{
+    color: #98CB3B;
+    transition: all 0.3s ease;
+}/* nal lio */
+.navbar.sticky .logo a span{
+    color: #176696;
+}/* nal lio when moved */
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: #FFFFFF;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}/* navbar Elements */
+.navbar .menu li a:hover{
+    color: #98CB3B;
+}/* navbar Elements hover*/
+.navbar.sticky .menu li a:hover{
+    color: #176696;
+}/* Moved Navbar Hover */
+
+.menu-btn{
+    color: #FFFFFF;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.signals{
+  display: flex;
+  background:  url('../images/bgnd.jpg') no-repeat center center fixed; 
+  height: 110vh;
+  color: #FFFFFF; /* Color of Name, and moving text in first page*/
+  min-height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+}
+.signals .signals-content .left{
+  width: 45%;
+}
+.signals .signals-content .left .input[type=text] {
+  width: 35%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.signals .signals-content .right{
+  width: 55%;
+}
+.signals .signals-content .right .img{
+height: 400px;
+width: 400px;
+object-fit: cover;
+border-radius: 6px;
+}
+
+.product{
+  display: flex;
+  background:  url('../images/bgnd1.jpg') no-repeat center center fixed; 
+  height: 115vh;
+  color: #FCF6F5FF; /* Color of Name, and moving text in first page*/
+  min-height: 500px;
+  padding: 100px 0px;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+}
+.product .product-content .left{
+  width: 45%;
+}
+.product .product-content .left .input[type=text] {
+  width: 35%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.product .product-content .right{
+  width: 55%;
+}
+.product .product-content .right .img{
+height: 400px;
+width: 400px;
+object-fit: cover;
+border-radius: 6px;
+}
+
+.fourier{
+  display: flex;
+  background:  url('../images/bgnd1.jpg') no-repeat center center fixed; 
+  height: 115vh;
+  color: #FCF6F5FF; /* Color of Name, and moving text in first page*/
+  min-height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+}
+.fourier .fourier-content .left{
+  width: 45%;
+}
+.fourier .fourier-content .left .input[type=text] {
+  width: 35%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.fourier .fourier-content .right{
+  width: 55%;
+}
+.fourier .fourier-content .right .img{
+height: 400px;
+width: 400px;
+object-fit: cover;
+border-radius: 6px;
+}
+
+.haar{
+  display: flex;
+  background:  url('../images/bgnd.jpg') no-repeat center center fixed; 
+  height: 115vh;
+  color: #FFFFFF;
+  min-height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+}
+.haar .haar-content .left{
+  width: 45%;
+}
+.haar .haar-content .left .input[type=text] {
+  width: 35%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.haar .haar-content .right{
+  width: 55%;
+}
+.haar .haar-content .right .img{
+height: 400px;
+width: 400px;
+object-fit: cover;
+border-radius: 6px;
+}
+
+@media (max-width: 1104px) {
+    .signals .signals-content .right .img{
+        height: 350px;
+        width: 350px;
+    }
+    .product .product-content .right .img{
+      height: 350px;
+      width: 350px;
+    }
+    .fourier .fourier-content .right .img{
+      height: 350px;
+      width: 350px;
+    }
+    .haar .haar-content .right .img{
+      height: 350px;
+      width: 350px;
+    }
+}
+
+@media (max-width: 991px) {
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li{
+        display: block;
+    }
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .max-width{
+        max-width: 930px;
+    }
+    .signals .signals-content .column{
+        width: 60%;
+    }
+    .signals .signals-content .left{
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+    }
+    .signals .signals-content .right{
+        flex: 100%;
+    }
+    .product .product-content .column{
+      width: 60%;
+    }
+    .product .product-content .left{
+      display: flex;
+      justify-content: center;
+      margin: 0 auto 60px;
+    }
+    .product .product-content .right{
+      flex: 100%;
+    }
+    .fourier .fourier-content .column{
+      width: 60%;
+    }
+    .fourier .fourier-content .left{
+      display: flex;
+      justify-content: center;
+      margin: 0 auto 60px;
+    }
+    .fourier .fourier-content .right{
+      flex: 100%;
+    }
+    .haar .haar-content .column{
+      width: 60%;
+    }
+    .haar .haar-content .left{
+      display: flex;
+      justify-content: center;
+      margin: 0 auto 60px;
+    }
+    .haar .haar-content .right{
+      flex: 100%;
+    }
+}
+
+.select1{
+  position: relative;
+  width: 10%;
+  z-index: 999;
+  padding: 10px 0;
+  font-family: 'Ubuntu', sans-serif;
+  transition: all 0.3s ease;
+}
+
+section{
+  padding: 10px 0;
+}
+.max-width{
+  max-width: 1300px;
+  padding: 0 10px;
+  margin: auto;
+}
+
+/* ------------------------------------------ Drop Down ------------------------------------------------------- */
+.box {
+  position: relative;
+  margin-left: 20%;
+  margin-top: 10%;
+  transform: translate(-50%, -50%);
+}
+
+.box select {
+  background-color: #98CB3B;
+  color: white;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.box::before {
+  content: "\f13a";
+  font-family: 'Ubuntu', sans-serif;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  font-size: 28px;
+  line-height: 45px;
+  color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
+}
+/* --------------------------------------------- Drop Down END ---------------------------------------------------------*/
+
+.fill {
+  position: relative;
+  margin-left: 20%;
+  margin-top: 20%;
+  top: 0%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+.fill1 {
+  position: relative;
+  margin-left: 20%;
+  margin-top: 0%;
+  top: 0%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+.fill2 {
+  position: relative;
+  margin-left: 20%;
+  margin-top: 10%;
+  top: 0%;
+  left: 0%;
+  transform: translate(-50%, -50%);
+}
+
+/* ----------------------------------------- Plot Button -----------------------------------------------------*/
+
+.button1{
+  all: unset;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: 0%;
+  margin-top: 20%;
+}
+
+.button2{
+  all: unset;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: 0%;
+  margin-top: 10%;
+}
+
+.button1::after,.button1::before,.button2::after,.button2::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.button1::before,.button2::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #2C9AD1;
+  border-radius: 10px;
+}
+
+.button1::after,.button2::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #ffffff15;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.button1:hover::before,.button2:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.button1:hover::after,.button2:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.button1:active::after,.button2:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
