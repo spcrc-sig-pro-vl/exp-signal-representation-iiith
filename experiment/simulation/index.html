@@ -15,21 +15,24 @@
 
 <body>
 
-	<nav class="navbar" id="navbar">
-        <div class="max-width">
-            <div class="logo"><a style="color:white">Orthogon<span>ality</span> Simula<span>tion</span></a></div>
-            <ul class="menu">
-                <li><a href="#signals" class="menu-btn">Signal Plot</a></li>
-                <li><a href="#product" class="menu-btn">Signal Product</a></li>
-				<li><a href="#sine" class="menu-btn">Sinusoids</a></li>
-                <li><a href="#fourier" class="menu-btn">Fourier Basis</a></li>
-                <li><a href="#haar" class="menu-btn">Haar Wavelet</a></li>
-                <li><a href="#ortho" class="menu-btn">Orthogonality</a></li>
-            </ul>
+    <div class="columns is-centered">
+        <div class="column is-one-quarter v-instruction-title">
+            Tasks
         </div>
-    </nav>
+        <div class="column">
+            <div class="tab">
+                <button class="tablinks" onclick="openPart(event, 'Signal')", id="default">Signal Plot</button>
+                <button class="tablinks" onclick="openPart(event, 'Prod')">Signal Product</button>
+                <button class="tablinks" onclick="openPart(event, 'Sine')">Real Sinusoids</button>
+                <button class="tablinks" onclick="openPart(event, 'Four')">Complex Sinusoids</button>
+                <button class="tablinks" onclick="openPart(event, 'Haar')">Haar Wavelet</button>
+				<button class="tablinks" onclick="openPart(event, 'Orth')">Orthogonality Test</button>
+            </div>
+        </div>
+    </div>
 
-	<section class="signals" id="signals">
+<div id="Signal" class="tabcontent">
+    <section class="signals" id="signals">
         <div class="max-width">
             <h2 class="title">Plotting Signals</h2>
             <div class="signals-content">
@@ -44,8 +47,8 @@
 						  <option value="6">Complex Exponential</option>
 						</select>
 					</div>
-                    <div class="fill"> Frequency: &emsp; <input type=number id="fre" value=1 step=0.5> </div>
-					<div class="fill"> Amplitude: &emsp; <input type=number id="amp" value=1 step=0.5> </div>
+                    <div class="fill"> Parameter 1: &emsp; <input type=number id="fre" value=1 step=0.5> </div>
+					<div class="fill"> Parameter 2: &emsp; <input type=number id="amp" value=1 step=0.5> </div>
 					<button class="button1" id="jsbutton" role="button" onClick="sig()">Plot the function</button>
                 </div>
 				<div class="column right">
@@ -54,8 +57,10 @@
             </div>
         </div>
     </section>
+</div>
 
-	<section class="product" id="product">
+<div id="Prod" class="tabcontent">
+    <section class="product" id="product">
         <div class="max-width">
             <h2 class="title">Product of Signals</h2>
             <div class="product-content">
@@ -71,8 +76,8 @@
 						  <option value="6">Complex Exponential</option>
 						</select>
 					</div>
-                    <div class="fill1"> Frequency: &emsp; <input type=number id="fre1" value=1 step=0.5> </div>
-					<div class="fill1"> Amplitude: &emsp; <input type=number id="amp1" value=1 step=0.5> </div>
+                    <div class="fill1"> Parameter 1: &emsp; <input type=number id="fre1" value=1 step=0.5> </div>
+					<div class="fill1"> Parameter 2: &emsp; <input type=number id="amp1" value=1 step=0.5> </div>
 					<h4>Select Signal 2</h4>
 					<div class="box">
 						<select id="sig-names2">
@@ -84,8 +89,8 @@
 						  <option value="6">Complex Exponential</option>
 						</select>
 					</div>
-                    <div class="fill1"> Frequency: &emsp; <input type=number id="fre2" value=1 step=0.5> </div>
-					<div class="fill1"> Amplitude: &emsp; <input type=number id="amp2" value=1 step=0.5> </div>
+                    <div class="fill1"> Parameter 1: &emsp; <input type=number id="fre2" value=1 step=0.5> </div>
+					<div class="fill1"> Parameter 2: &emsp; <input type=number id="amp2" value=1 step=0.5> </div>
 					<button class="button2" id="jsbutton1" role="button" onClick="prod()">Plot the function</button>
                 </div>
 				<div class="column right">
@@ -94,14 +99,14 @@
             </div>
         </div>
     </section>
+</div>
 
-	<section class="haar" id="sine">
+<div id="Sine" class="tabcontent">
+    <section class="haar" id="sine">
         <div class="max-width">
-            <h2 class="title">Orthogonality of Fourier Sinusoids</h2>
+            <h2 class="title">Orthogonality of Real Sinusoids</h2>
             <div class="haar-content">
                 <div class="column left">
-					<h4>Select Order N (>= 2)</h4>
-					<div class="fill2"> N &emsp; <input type=number id="N0" value=2 step=0.5> </div>
 					<h4>Select Signal 1</h4>
                     <div class="box">
 						<select id="sig-names0">
@@ -122,22 +127,25 @@
                 </div>
 				<div class="column right">
                     <div id='figure0'></div>
-					<div id='container1'>
-						<img src='./images/int.jpeg' style="float: left; margin-top: -1%; margin-left: 5%;"/>
-						<p id="in1" style="color: #000000; background-color: #FFFFFF; margin-top: 5%; margin-left: 60%;"></p>
+					<div class="v-datalist-container components-list" style="margin-top: 10%;">
+						<div class="v-datalist-title">Observations</div>
+						<div class="v-datalist-row">
+							<img src='./images/int.jpeg' style="float: left; margin-top: -1%; margin-left: 5%; margin-right: -20%;"/>
+							<div id="in1"></div>
+						</div>
 					</div>
                 </div>
             </div>
         </div>
     </section>
+</div>
 
-	<section class="fourier" id="fourier">
+<div id="Four" class="tabcontent">
+    <section class="fourier" id="fourier">
         <div class="max-width">
-            <h2 class="title">Orthogonality of Fourier Basis Signals</h2>
+            <h2 class="title">Orthogonality of Complex Sinusoids</h2>
             <div class="fourier-content">
                 <div class="column left">
-					<h4>Select Order N (>= 2)</h4>
-					<div class="fill2"> N &emsp; <input type=number id="N1" value=2 step=0.5> </div>
 					<h4>Select k for Signal 1</h4>
 					<div class="fill2"> k &emsp; <input type=number id="k1" value=1 step=0.5> </div>
 					<h4>Select k for Signal 2</h4>
@@ -146,23 +154,26 @@
                 </div>
 				<div class="column right">
                     <div id='figure3'></div>
-					<div id='container2'>
-						<img src='./images/int.jpeg' style="float: left; margin-top: -1%; margin-left: 5%;"/>
-						<p id="in2" style="color: #000000; background-color: #FFFFFF; margin-top: 5%; margin-left: 60%;"></p>
+					<div class="v-datalist-container components-list" style="margin-top: 10%;">
+						<div class="v-datalist-title">Observations</div>
+						<div class="v-datalist-row">
+							<img src='./images/int.jpeg' style="float: left; margin-top: -1%; margin-left: 5%; margin-right: -20%;"/>
+							<div id="in2"></div>
+						</div>
 					</div>
                 </div>
             </div>
         </div>
     </section>
+</div>
 
-	
-
-	<section class="haar" id="haar">
+<div id="Haar" class="tabcontent">
+    <section class="haar" id="haar">
         <div class="max-width">
             <h2 class="title">Orthogonality of Haar Wavelets</h2>
             <div class="haar-content">
                 <div class="column left">
-					<h4 style="margin-left: -20%; margin-bottom: 15%;">Select Frequency of Haar Wavelet 1</h4>
+					<h4 style="margin-left: -20%; margin-bottom: 15%;">Select Shift Parameter of Wavelet 1</h4>
                     <div class="box">
 						<select id="sig-names5">
 						  <option value="1">1</option>
@@ -171,7 +182,7 @@
 						  <option value="8">8</option>
 						</select>
 					</div>
-					<h4 style="margin-left: -20%; margin-bottom: 15%;">Select Frequency of Haar Wavelet 2</h4>
+					<h4 style="margin-left: -20%; margin-bottom: 15%;">Select Shift Parameter of Wavelet 2</h4>
 					<div class="box">
 						<select id="sig-names6">
 							<option value="1">1</option>
@@ -184,18 +195,23 @@
                 </div>
 				<div class="column right">
                     <div id='figure4'></div>
-					<div id='container3'>
-						<img src='./images/int.jpeg' style="float: left; margin-top: -1%; margin-left: 5%;"/>
-						<p id="in3" style="color: #000000; background-color: #FFFFFF; margin-top: 5%; margin-left: 60%;"></p>
+					<div class="v-datalist-container components-list" style="margin-top: 10%;">
+						<div class="v-datalist-title">Observations</div>
+						<div class="v-datalist-row">
+							<img src='./images/int.jpeg' style="float: left; margin-top: -1%; margin-left: 5%; margin-right: -20%;"/>
+							<div id="in3"></div>
+						</div>
 					</div>
                 </div>
             </div>
         </div>
     </section>
+</div>
 
-	<section class="fourier" id="ortho">
+<div id="Orth" class="tabcontent">
+    <section class="fourier" id="ortho">
         <div class="max-width">
-            <h2 class="title">Orthogonality of Signals</h2>
+            <h2 class="title">Test Orthogonality of Signals</h2>
             <div class="fourier-content">
                 <div class="column left">
 					<h4>Select Signal 1</h4>
@@ -208,8 +224,8 @@
 						  <option value="5">Haar</option>
 						</select>
 					</div>
-                    <div class="fill1"> Frequency: &emsp; <input type=number id="fre3" value=1 step=0.5> </div>
-					<div class="fill1"> Amplitude: &emsp; <input type=number id="amp3" value=1 step=0.5> </div>
+                    <div class="fill1"> Parameter 1: &emsp; <input type=number id="fre3" value=1 step=0.5> </div>
+					<div class="fill1"> Parameter 2: &emsp; <input type=number id="amp3" value=1 step=0.5> </div>
 					<h4>Select Signal 2</h4>
 					<div class="box">
 						<select id="sig-names8">
@@ -220,20 +236,24 @@
 						  <option value="5">Haar</option>
 						</select>
 					</div>
-                    <div class="fill1"> Frequency: &emsp; <input type=number id="fre4" value=1 step=0.5> </div>
-					<div class="fill1"> Amplitude: &emsp; <input type=number id="amp4" value=1 step=0.5> </div>
+                    <div class="fill1"> Parameter 1: &emsp; <input type=number id="fre4" value=1 step=0.5> </div>
+					<div class="fill1"> Parameter 2: &emsp; <input type=number id="amp4" value=1 step=0.5> </div>
 					<button class="button2" id="jsbutton4" role="button" onClick="orth()">Plot the function</button>
                 </div>
 				<div class="column right">
                     <div id='figure5'></div>
-					<div id='container4'>
-						<img src='./images/int.jpeg' style="float: left; margin-top: -1%; margin-left: 5%;"/>
-						<p id="in4" style="color: #000000; background-color: #FFFFFF; margin-top: 5%; margin-left: 60%;"></p>
+					<div class="v-datalist-container components-list" style="margin-top: 10%;">
+						<div class="v-datalist-title">Observations</div>
+						<div class="v-datalist-row">
+							<img src='./images/int.jpeg' style="float: left; margin-top: -1%; margin-left: 5%; margin-right: -20%;"/>
+							<div id="in4"></div>
+						</div>
 					</div>
                 </div>
             </div>
         </div>
     </section>
+</div>
 
   <script src="./js/main.js"></script>
 

@@ -1,3 +1,17 @@
+function openPart(evt, name) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(name).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+
 // ------------------------------------------ Signal Plotting ----------------------------------------------------------
 
 function sig(){
@@ -108,7 +122,7 @@ function sig(){
         var config = {responsive: true}
     
         var layout = {
-            title: 'Classical Signals',
+            title: '',
             showlegend: false,
             grid: {rows: 1, columns: 2, pattern: 'independent'},
             xaxis: {
@@ -170,7 +184,7 @@ function sig(){
     var config = {responsive: true}
 
     var layout = {
-        title: 'Classical Signals',
+        title: '',
         showlegend: false,
         xaxis: {
             title: 'Time (t)'
@@ -245,7 +259,7 @@ function prod(){
             }
         }
     }
-    else if(sig==5)
+    else if(sel==5)
     {
         var xValues = makeArr(-2,2,1000);
         var yValues = [];
@@ -518,13 +532,12 @@ function prod(){
 function sine(){
     sig3 = document.getElementById("sig-names0").value
 	sig4 = document.getElementById("sig-names-1").value
-	N = document.getElementById("N0").value
+	N = 8;
 	k11 = document.getElementById("k0").value
 	k22 = document.getElementById("k01").value
     
     sig3 = parseFloat(sig3);
     sig4 = parseFloat(sig4);
-    N = parseFloat(N);
     k11 = parseFloat(k11);
     k22 = parseFloat(k22);
 
@@ -630,7 +643,7 @@ function sine(){
     var config = {responsive: true}
 
     var layout = {
-        title: 'Orthogonality of Fourier Basis Functions',
+        title: 'Orthogonality of Real Sinusoids',
         showlegend: false,
         xaxis: {
             title: 'Time (t)'
@@ -646,18 +659,27 @@ function sine(){
         height: 400
     };
     Plotly.relayout('figure0', update);
-
-    document.getElementById("in1").innerHTML = sum.toPrecision(2);
+    var element = document.getElementById("in1");
+    if(sum==0)
+    {
+        element.style.color = "#006400";
+    }
+    else
+    {
+        element.style.color = "#FF0000";   
+    }
+    element.style.fontWeight = "bold";
+    element.style.fontSize = "x-large";
+    element.innerHTML = sum.toPrecision(2);
 }
 
 // ------------------------------------------ Fourier Basis ----------------------------------------------------------
 
 function four(){
-	N = document.getElementById("N1").value
+	N = 8;
 	k11 = document.getElementById("k1").value
 	k22 = document.getElementById("k2").value
     
-    N = parseFloat(N);
     k11 = parseFloat(k11);
     k22 = parseFloat(k22);
 
@@ -753,7 +775,7 @@ function four(){
     var config = {responsive: true}
 
     var layout = {
-        title: 'Orthogonality of Fourier Basis functions',
+        title: 'Orthogonality of Complex Sinusoids',
         showlegend: false,
         grid: {rows: 1, columns: 2, pattern: 'independent'},
         xaxis: {
@@ -803,10 +825,34 @@ function four(){
 
     if(k11==k22)
     {
-        document.getElementById("in2").innerHTML = 1.0;
+        sum = 1.00;
+        var element = document.getElementById("in2");
+        if(sum==0)
+        {
+            element.style.color = "#006400";
+        }
+        else
+        {
+            element.style.color = "#FF0000";   
+        }
+        element.style.fontWeight = "bold";
+        element.style.fontSize = "x-large";
+        element.innerHTML = sum.toPrecision(2);
         return;
     }
-    document.getElementById("in2").innerHTML = 0.0;
+    sum = 0.0;
+    var element = document.getElementById("in2");
+    if(sum==0)
+    {
+        element.style.color = "#006400";
+    }
+    else
+    {
+        element.style.color = "#FF0000";   
+    }
+    element.style.fontWeight = "bold";
+    element.style.fontSize = "x-large";
+    element.innerHTML = sum.toPrecision(2);
 }
 
 // ------------------------------------------ Haar Wavelets ----------------------------------------------------------
@@ -867,7 +913,18 @@ function har(){
         sum = 0;
     }
 
-    document.getElementById("in3").innerHTML = sum.toPrecision(2);
+    var element = document.getElementById("in3");
+    if(sum==0)
+    {
+        element.style.color = "#006400";
+    }
+    else
+    {
+        element.style.color = "#FF0000";   
+    }
+    element.style.fontWeight = "bold";
+    element.style.fontSize = "x-large";
+    element.innerHTML = sum.toPrecision(2);
 
     yValuesPos = [];
     yValuesNeg = [];
@@ -1088,7 +1145,18 @@ function orth(){
         sum = 0;
     }
 
-    document.getElementById("in4").innerHTML = sum.toPrecision(2);
+    var element = document.getElementById("in4");
+    if(sum==0)
+    {
+        element.style.color = "#006400";
+    }
+    else
+    {
+        element.style.color = "#FF0000";   
+    }
+    element.style.fontWeight = "bold";
+    element.style.fontSize = "x-large";
+    element.innerHTML = sum.toPrecision(2);
 
     yValuesPos = [];
     yValuesNeg = [];
@@ -1163,24 +1231,9 @@ function startup()
     four();
     har();
     orth();
+    document.getElementById("default").click();
+    var width = screen.width;
+    var height = screen.height;
 }
 
 window.onload = startup;
-
-// ------------------------------------------ Sticky Navbar ----------------------------------------------------------
-
-window.onscroll = function() {myFunction()};
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-
-function myFunction() 
-{  
-    if (window.pageYOffset > sticky) 
-    {
-        navbar.classList.add("sticky");
-    } 
-    else 
-    {
-        navbar.classList.remove("sticky");
-    }
-}

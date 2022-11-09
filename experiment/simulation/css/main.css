@@ -24,24 +24,23 @@ html{
     background: #555;
 }
 
-section{
-    padding: 100px 0;
-}
+/* -------------------------------------- Laptops and Desktops -------------------------------------- */
+@media (min-width: 1025px){
+  
 .max-width{
     max-width: 1300px;
     padding: 0 80px;
     margin: auto;
 }
 
-.signals, .product, .fourier, .haar, .cancel, footer{
+.signals, .product, .fourier, .haar, footer{
   font-family: 'Poppins', sans-serif;
 }
 
 .signals .signals-content,
 .product .product-content,
 .fourier .fourier-content,
-.haar .haar-content,
-.cancel .cancel-content{
+.haar .haar-content{
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -51,86 +50,24 @@ section{
 section .title{
   position: relative;
   text-align: center;
-  color: #FFFFFF;
+  color: #000000;
   font-size: 40px;
   font-weight: 500;
-  margin-bottom: 60px;
-  padding-bottom: 20px;
+  margin-top: -20%;
   font-family: 'Ubuntu', sans-serif;
 }
-.navbar{
-    position: fixed;
-    background: #176696;
-    width: 100%;
-    z-index: 999;
-    padding: 0 0;
-    font-family: 'Ubuntu', sans-serif;
-    transition: all 0.3s ease;
-}/* Navbar */
 
-.navbar.sticky{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 0 0;
-    background: #98CB3B;
-}/* Moved Navbar */
-.navbar .max-width{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.navbar .logo
-{
-  position: relative;
-  left: 0%;
-}
-.navbar .logo a{
-    color: #98CB3B;
-    font-size: 35px;
-    font-weight: 600;
-}/* Perso Portfo */
-.navbar .logo a span{
-    color: #98CB3B;
-    transition: all 0.3s ease;
-}/* nal lio */
-.navbar.sticky .logo a span{
-    color: #176696;
-}/* nal lio when moved */
-.navbar .menu li{
-    list-style: none;
-    display: inline-block;
-}
-.navbar .menu li a{
-    display: block;
-    color: #FFFFFF;
-    font-size: 18px;
-    font-weight: 500;
-    margin-left: 25px;
-    transition: color 0.3s ease;
-}/* navbar Elements */
-.navbar .menu li a:hover{
-    color: #98CB3B;
-}/* navbar Elements hover*/
-.navbar.sticky .menu li a:hover{
-    color: #176696;
-}/* Moved Navbar Hover */
-
-.menu-btn{
-    color: #FFFFFF;
-    font-size: 23px;
-    cursor: pointer;
-    display: none;
-}
 .signals{
   display: flex;
-  background:  url('../images/bgnd.jpg') no-repeat center center fixed; 
   height: 110vh;
-  color: #FFFFFF; /* Color of Name, and moving text in first page*/
+  color: #000000; /* Color of Name, and moving text in first page*/
   min-height: 500px;
   background-size: cover;
   background-attachment: fixed;
   font-family: 'Ubuntu', sans-serif;
+}
+.signals .signals-content{
+  margin-top: 10%;
 }
 .signals .signals-content .left{
   width: 45%;
@@ -153,9 +90,8 @@ border-radius: 6px;
 
 .product{
   display: flex;
-  background:  url('../images/bgnd1.jpg') no-repeat center center fixed; 
   height: 115vh;
-  color: #FCF6F5FF; /* Color of Name, and moving text in first page*/
+  color: #000000; /* Color of Name, and moving text in first page*/
   min-height: 500px;
   padding: 100px 0px;
   background-size: cover;
@@ -183,9 +119,8 @@ border-radius: 6px;
 
 .fourier{
   display: flex;
-  background:  url('../images/bgnd1.jpg') no-repeat center center fixed; 
   height: 115vh;
-  color: #FCF6F5FF; /* Color of Name, and moving text in first page*/
+  color: #000000; /* Color of Name, and moving text in first page*/
   min-height: 500px;
   background-size: cover;
   background-attachment: fixed;
@@ -212,9 +147,8 @@ border-radius: 6px;
 
 .haar{
   display: flex;
-  background:  url('../images/bgnd.jpg') no-repeat center center fixed; 
   height: 115vh;
-  color: #FFFFFF;
+  color: #000000;
   min-height: 500px;
   background-size: cover;
   background-attachment: fixed;
@@ -238,102 +172,293 @@ width: 400px;
 object-fit: cover;
 border-radius: 6px;
 }
-
-@media (max-width: 1104px) {
-    .signals .signals-content .right .img{
-        height: 350px;
-        width: 350px;
-    }
-    .product .product-content .right .img{
-      height: 350px;
-      width: 350px;
-    }
-    .fourier .fourier-content .right .img{
-      height: 350px;
-      width: 350px;
-    }
-    .haar .haar-content .right .img{
-      height: 350px;
-      width: 350px;
-    }
 }
 
-@media (max-width: 991px) {
-    .max-width{
-        padding: 0 50px;
-    }
+/* ----------------------------------------- Tabs --------------------------------------- */
+@media (min-width: 481px) and (max-width: 1024px) {
+
+.max-width{
+    max-width: 1024px;
+    padding: 0 80px;
+    margin: auto;
 }
-@media (max-width: 947px){
-    .navbar .menu{
-        position: fixed;
-        height: 100vh;
-        width: 100%;
-        left: -100%;
-        top: 0;
-        background: #111;
-        text-align: center;
-        padding-top: 80px;
-        transition: all 0.3s ease;
-    }
-    .navbar .menu.active{
-        left: 0;
-    }
-    .navbar .menu li{
-        display: block;
-    }
-    .navbar .menu li a{
-        display: inline-block;
-        margin: 20px 0;
-        font-size: 25px;
-    }
-    .max-width{
-        max-width: 930px;
-    }
-    .signals .signals-content .column{
-        width: 60%;
-    }
-    .signals .signals-content .left{
-        display: flex;
-        justify-content: center;
-        margin: 0 auto 60px;
-    }
-    .signals .signals-content .right{
-        flex: 100%;
-    }
-    .product .product-content .column{
-      width: 60%;
-    }
-    .product .product-content .left{
-      display: flex;
-      justify-content: center;
-      margin: 0 auto 60px;
-    }
-    .product .product-content .right{
-      flex: 100%;
-    }
-    .fourier .fourier-content .column{
-      width: 60%;
-    }
-    .fourier .fourier-content .left{
-      display: flex;
-      justify-content: center;
-      margin: 0 auto 60px;
-    }
-    .fourier .fourier-content .right{
-      flex: 100%;
-    }
-    .haar .haar-content .column{
-      width: 60%;
-    }
-    .haar .haar-content .left{
-      display: flex;
-      justify-content: center;
-      margin: 0 auto 60px;
-    }
-    .haar .haar-content .right{
-      flex: 100%;
-    }
+
+.signals, .product, .fourier, .haar, footer{
+  font-family: 'Poppins', sans-serif;
 }
+
+.signals .signals-content,
+.product .product-content,
+.fourier .fourier-content,
+.haar .haar-content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+} /* change orientations here */
+
+section .title{
+  position: relative;
+  text-align: center;
+  color: #000000;
+  font-size: 40px;
+  font-weight: 500;
+  margin-top: 20%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.signals{
+  display: flex;
+  color: #000000; /* Color of Name, and moving text in first page*/
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+}
+.signals .signals-content{
+  margin-top: 10%;
+}
+.signals .signals-content .left{
+  width: 50%;
+  position: relative;
+  margin-left: 35%;
+}
+.signals .signals-content .left .input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.signals .signals-content .right{
+  width: 100%;
+  position: relative;
+  margin-top: 20%;
+  margin-left: 15%;
+}
+
+.product{
+  display: flex;
+  color: #000000; /* Color of Name, and moving text in first page*/
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+}
+.product .product-content{
+  margin-top: 10%;
+}
+.product .product-content .left{
+  width: 50%;
+  position: relative;
+  margin-left: 35%;
+}
+.product .product-content .left .input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.product .product-content .right{
+  width: 100%;
+  position: relative;
+  margin-top: 20%;
+  margin-left: 15%;
+}
+
+.fourier{
+  display: flex;
+  color: #000000; /* Color of Name, and moving text in first page*/
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+}
+.fourier .fourier-content{
+  margin-top: 10%;
+}
+.fourier .fourier-content .left{
+  width: 50%;
+  position: relative;
+  margin-left: 35%;
+}
+.fourier .fourier-content .left .input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.fourier .fourier-content .right{
+  width: 100%;
+  position: relative;
+  margin-top: 10%;
+  margin-left: 15%;
+}
+
+.haar{
+  display: flex;
+  color: #000000; /* Color of Name, and moving text in first page*/
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+}
+.haar .haar-content{
+  margin-top: 10%;
+}
+.haar .haar-content .left{
+  width: 50%;
+  position: relative;
+  margin-left: 35%;
+}
+.haar .haar-content .left .input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.haar .haar-content .right{
+  width: 100%;
+  position: relative;
+  margin-top: 10%;
+  margin-left: 15%;
+}
+}
+
+/* --------------------------------------------- Mobiles -------------------------------------- */
+
+@media (max-width: 480px) {
+  .max-width{
+    max-width: 480px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+.signals, .product, .fourier, .haar, footer{
+  font-family: 'Poppins', sans-serif;
+}
+
+.signals .signals-content,
+.product .product-content,
+.fourier .fourier-content,
+.haar .haar-content{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+} /* change orientations here */
+
+section .title{
+  position: relative;
+  text-align: center;
+  color: #000000;
+  font-size: 40px;
+  font-weight: 500;
+  margin-top: 20%;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.signals{
+  display: flex;
+  color: #000000; /* Color of Name, and moving text in first page*/
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+}
+.signals .signals-content{
+  margin-top: 10%;
+}
+.signals .signals-content .left{
+  width: 50%;
+  position: relative;
+  margin-left: 35%;
+}
+.signals .signals-content .left .input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.signals .signals-content .right{
+  width: 100%;
+  position: relative;
+  margin-top: 20%;
+  margin-left: 15%;
+}
+
+.product{
+  display: flex;
+  color: #000000; /* Color of Name, and moving text in first page*/
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+}
+.product .product-content{
+  margin-top: 10%;
+}
+.product .product-content .left{
+  width: 50%;
+  position: relative;
+  margin-left: 35%;
+}
+.product .product-content .left .input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.product .product-content .right{
+  width: 100%;
+  position: relative;
+  margin-top: 20%;
+  margin-left: 15%;
+}
+
+.fourier{
+  display: flex;
+  color: #000000; /* Color of Name, and moving text in first page*/
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+}
+.fourier .fourier-content{
+  margin-top: 10%;
+}
+.fourier .fourier-content .left{
+  width: 50%;
+  position: relative;
+  margin-left: 35%;
+}
+.fourier .fourier-content .left .input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.fourier .fourier-content .right{
+  width: 100%;
+  position: relative;
+  margin-top: 10%;
+  margin-left: 15%;
+}
+
+.haar{
+  display: flex;
+  color: #000000; /* Color of Name, and moving text in first page*/
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: 'Ubuntu', sans-serif;
+}
+.haar .haar-content{
+  margin-top: 10%;
+}
+.haar .haar-content .left{
+  width: 50%;
+  position: relative;
+  margin-left: 35%;
+}
+.haar .haar-content .left .input[type=text] {
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+.haar .haar-content .right{
+  width: 100%;
+  position: relative;
+  margin-top: 10%;
+  margin-left: 15%;
+}
+}
+
+/* -------------------------- Drop Down --------------------------------- */
 
 .select1{
   position: relative;
@@ -342,15 +467,6 @@ border-radius: 6px;
   padding: 10px 0;
   font-family: 'Ubuntu', sans-serif;
   transition: all 0.3s ease;
-}
-
-section{
-  padding: 10px 0;
-}
-.max-width{
-  max-width: 1300px;
-  padding: 0 10px;
-  margin: auto;
 }
 
 /* ------------------------------------------ Drop Down ------------------------------------------------------- */
@@ -398,7 +514,7 @@ section{
 .box select option {
   padding: 30px;
 }
-/* --------------------------------------------- Drop Down END ---------------------------------------------------------*/
+/* --------------------------------------------- Text Fields ---------------------------------------------------------*/
 
 .fill {
   position: relative;
@@ -516,4 +632,46 @@ section{
 .button1:active::after,.button2:active::after {
   transition: 0s;
   transform: translate(0, 5%);
+}
+
+/* ---------------------------------------------------- Tabs -------------------------------------------- */
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #FFFFFF;
+  background-color: #FFFFFF;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #98CB3B;
+  color: #176696;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
 }
